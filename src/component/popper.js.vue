@@ -111,7 +111,7 @@
       trigger: {
         type: String,
         default: 'hover',
-        validator: value => ['click', 'hover'].indexOf(value) > -1
+        validator: value => ['click', 'hover', 'focus'].indexOf(value) > -1
       },
       delayOnMouseOver: {
         type: Number,
@@ -205,6 +205,8 @@
           on(this.popper, 'mouseover', this.onMouseOver);
           on(this.referenceElm, 'mouseout', this.onMouseOut);
           on(this.popper, 'mouseout', this.onMouseOut);
+          on(this.referenceElm, 'focus', this.onMouseOver);
+          on(this.referenceElm, 'focus', this.onMouseOut);
           break;
       }
     },
